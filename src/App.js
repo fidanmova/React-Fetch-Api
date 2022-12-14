@@ -94,8 +94,8 @@ function App() {
         </div>
       </div>
       <div className="flex justify-center items-center sm:text-2xl text-gray-300 font-bold">
-        For the record: Chuck Norris has a sexist, phobic and stupidly toxic
-        jokes. So ignore the jokes and focus on coding please!
+        For the record: Jokes about Chuck Norris has a sexist, phobic and
+        stupidly toxic context. So ignore the jokes and focus on coding please!
       </div>
       <div className="flex justify-center items-center sm:text-lg text-gray-600 font-bold mt-8">
         {state.joke}
