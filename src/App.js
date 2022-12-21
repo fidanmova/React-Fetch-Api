@@ -23,6 +23,7 @@ function App() {
     setState({ ...state, joke: result.data.value });
     // setState({ state });
   };
+
   const searchJoke = (e) => {
     console.log(e.target.value);
     setState({ ...state, searchKeyword: e.target.value });
@@ -34,6 +35,7 @@ function App() {
     console.log("fetchMyJoke result", result.data.result);
     setState(state);
 
+    // Randomly pick the jokes
     const jokePosition = Math.floor(Math.random() * result.data.result.length);
     console.log("jokePosition ==>>", jokePosition); // which number joke is displayed
     setState({
@@ -41,7 +43,7 @@ function App() {
       joke: result.data.result[jokePosition].value,
     });
 
-    // ! ==>> Remember Math.random Math.floor
+    // // ! ==>> Remember Math.random Math.floor
     // Math.random() // give random number 0 - 0.99999
     // Math.random() * 3  // give random number 0 - 2.99999
     // Math.floor(Math.random()*3)// 0-2
@@ -58,14 +60,12 @@ function App() {
             <h1 className="text-gray-600 sm:text-3xl font-bold  uppercase drop-shadow-2xl text-center mb-2">
               Joke Generator
             </h1>
-
             <img
               src={Image}
               alt="Chuck Norris"
               className="rounded-3xl w-96 h-80 mb-2"
             />
           </div>
-
           {/* Generate Joke container*/}
           <div className="flex-col  flex justify-center">
             <input
@@ -74,7 +74,6 @@ function App() {
               placeholder="Search for a word"
               className="input input-bordered input-lg w-full max-w-xs mb-4"
             />
-
             <button
               onClick={fetchMyJoke}
               className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
@@ -83,7 +82,6 @@ function App() {
             </button>
           </div>
         </div>
-
         {/* Button Ends Here */}
       </div>
       {/* Second Container */}
@@ -94,12 +92,12 @@ function App() {
         </div>
       </div>
       <div className="flex justify-center items-center sm:text-2xl text-gray-300 font-bold">
-        For the record: Jokes about Chuck Norris has a sexist, phobic and
-        stupidly toxic context. So ignore the jokes and focus on coding please!
-      </div>
-      <div className="flex justify-center items-center sm:text-lg text-gray-600 font-bold mt-8">
+        {" "}
         {state.joke}
       </div>
+
+      {/* To check what's searchKeyword */}
+      {/* <h2>{state.searchKeyword}</h2> */}
     </div>
   );
 }
